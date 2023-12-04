@@ -1,0 +1,2 @@
+Error: This is a custom exception
+Error: This is a custom exception
