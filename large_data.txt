@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="On February 24, russian troops invaded Ukraine and began a full-scale terror of death and destruction. We are giving a good fight back to the occupant, as you can see in this enemy losses statistics. Let's help the Armed Forces of Ukraine!" />
+<title>russianWarship.RIP API documentation v2</title>
+<link rel="shortcut icon" href="https://russianwarship.rip/favicon.png" />
+<link rel="preload" href="https://russianwarship.rip/fonts/Benzin_Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="https://russianwarship.rip/fonts/Inter-Regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="https://russianwarship.rip/fonts/Inter-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://russianwarship.rip/swagger/styles/swagger-ui.css">
+<link href="/dist/apiPage.292abef8e982934d6228.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+            function redirect(route) {
+                location.href = route;
+            }
+
+            function decryptMailTo(s) {
+                let n = 0;
+                let r = '';
+
+                for (let index = 0; index < s.length; index++) {
+                    n = s.charCodeAt(index);
+
+                    if (n >= 8364) {
+                        n = 128;
+                    }
+
+                    r += String.fromCharCode(n - 1);
+                }
+
+                return r;
+            }
+
+            function linkToDecryptMailTo(hash) {
+                redirect(
+                    decryptMailTo(hash)
+                );
+            }
+
+        </script>
+</head>
+<body>
+<div class="wrapper wrapper-api">
+<div class="bg-block bg-block-yellow"></div>
+<div class="bg-block bg-block-blue"></div>
+<div class="container-api">
+<div id="swagger-ui"></div>
+</div>
+</div>
+<script src="https://russianwarship.rip/swagger/scripts/swagger-ui-bundle.js"></script>
+<script src="https://russianwarship.rip/swagger/scripts/swagger-ui-standalone-preset.js"></script>
+<script>
+            window.onload = function () {
+                const addLinkToHomePage = () => {
+                    return {
+                        wrapComponents: {
+                            InfoUrl: (Original, {React}) => (props) => {
+                                return React.createElement("div", null,
+                                    React.createElement(Original, props),
+                                    React.createElement("a", {href: 'https://russianwarship.rip', className: "link-main"}, ""),
+                                );
+                            }
+                        }
+                    };
+                };
+
+                const addEmailLink = () => {
+                    return {
+                        wrapComponents: {
+                            Servers: (Original, {React}) => (props) => {
+                                return React.createElement("div", null,
+                                    React.createElement(Original, props),
+                                    React.createElement("a", {
+                                        href: "javascript:linkToDecryptMailTo('nbjmup;jogpAsvttjboxbstijq/sjq');",
+                                        className: "link-email",
+                                        'data-start': 'info',
+                                        'data-host-first': 'russian',
+                                        'data-host-second': 'warship',
+                                        'data-end': 'rip'
+                                    }, "")
+                                );
+                            }
+                        }
+                    };
+                };
+
+                const addVersionSelector = () => {
+                    return {
+                        wrapComponents: {
+                            InfoContainer: (Original, {React}) => (props) => {
+                                return React.createElement('div', null,
+                                    React.createElement('label', {className: 'select-label', for: 'select'},
+                                        React.createElement('span', null, 'Select a API version:'),
+                                        React.createElement('select', {id: 'select'},
+                                                                                            React.createElement(
+                                                    'option',
+                                                    {
+                                                        value: 'https://russianwarship.rip/api-documentation/v1',
+                                                        
+                                                    },
+                                                'v1'
+                                            ),
+                                                                                            React.createElement(
+                                                    'option',
+                                                    {
+                                                        value: 'https://russianwarship.rip/api-documentation/v2',
+                                                        selected: 'selected'
+                                                    },
+                                                'v2'
+                                            ),
+                                                                                    ),
+                                    ),
+                                    React.createElement(Original, props)
+                                );
+                            }
+                        }
+                    };
+                };
+
+                window.ui = SwaggerUIBundle({
+                    url: "https://russianwarship.rip/api-documentation/document/v2",
+                    dom_id: "#swagger-ui",
+                    deepLinking: true,
+                    validatorUrl: null,
+                    plugins: [
+                        addLinkToHomePage,
+                        addEmailLink,
+                        addVersionSelector,
+                        SwaggerUIBundle.plugins.DownloadUrl
+                    ],
+                });
+
+                const checkVersionSelectExist = setInterval(function () {
+                    const versionSelect = document.querySelector('#select');
+
+                    if (versionSelect) {
+                        clearInterval(checkVersionSelectExist);
+
+                        versionSelect.addEventListener('change', function () {
+                            redirect(versionSelect.value);
+                        });
+                    }
+                }, 100);
+            }
+        </script>
+<script src="/dist/apiPage.7d854c6330aa2c3a515a.js"></script>
+<script type="application/ld+json">
+            {
+                "@context": "http://schema.org/",
+                "@type": "WebSite",
+                "url": "https://russianwarship.rip/api-documentation/v2",
+                "inLanguage": "en",
+                "about": "russianWarship.RIP API documentation v2",
+                "description": "On February 24, russian troops invaded Ukraine and began a full-scale terror of death and destruction. We are giving a good fight back to the occupant, as you can see in this enemy losses statistics. Let's help the Armed Forces of Ukraine!",
+                "name": "russianWarship.RIP",
+                "contentLocation": "Ukraine",
+                "creator": {
+                    "@type": "Organization",
+                    "name": "WEBSPARK",
+                    "url": "https://www.webspark.ua/en/"
+                }
+            }
+        </script>
+</body>
+</html>
